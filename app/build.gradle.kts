@@ -2,7 +2,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
-    id("com.google.gms.google-services")
 }
 
 android {
@@ -62,16 +61,15 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 
     // WebRTC
-    // Precompiled AAR — no NDK build required
     implementation("io.getstream:stream-webrtc-android:1.1.1")
 
-    // Firebase
-    // Realtime Database for signaling + anonymous authentication
+    // Firebase libraries
+    // Configuration will be added later.
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.firebase:firebase-auth-ktx")
 
-    // ML Kit — on-device translation
+    // ML Kit
     implementation("com.google.mlkit:translate:17.0.3")
 
     // TINA character animations
