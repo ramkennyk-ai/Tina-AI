@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Nothing sensitive to exclude yet — signaling data is transient
+         (RTDB), not stored on-device. Revisit once you add local caches
+         (e.g. TINA's conversation memory) that shouldn't be backed up. -->
+</full-backup-content>
