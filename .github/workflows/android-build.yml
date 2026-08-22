@@ -1,13 +1,12 @@
 name: Build TINA AI debug APK
 
 on:
-  push:
-    branches: [ main ]
-  workflow_dispatch: {} # lets you trigger a build manually from GitHub Mobile/web
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -17,13 +16,12 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      # google-services.json is required for Firebase and shouldn't be
-      # committed to the repo (it's tied to your Firebase project). Store
-      # its contents as a repo secret (Settings → Secrets and variables →
-      # Actions → New repository secret, e.g. GOOGLE_SERVICES_JSON) and
-      # write it out here before the build.
+      # Firebase configuration
+      # Add GOOGLE_SERVICES_JSON in:
+      # Repository → Settings → Secrets and variables → Actions
       - name: Write google-services.json from secret
-        run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > app/google-services.json
+        run: |
+          echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > app/google-services.json
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
