@@ -1,0 +1,17 @@
+# Build outputs
+/build
+/app/build
+*.apk
+*.aab
+
+# Local config
+local.properties
+app/google-services.json
+
+# IDE (not used in your workflow, but harmless to exclude)
+.idea/
+*.iml
+.gradle/
+
+# OS
+.DS_Store
