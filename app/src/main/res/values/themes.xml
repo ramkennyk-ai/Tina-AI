@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Minimal system theme — Compose's MaterialTheme in MainActivity owns
+         actual app theming (colors, typography). This just needs to exist
+         for the activity's android:theme reference and controls things
+         Compose doesn't, like the splash/launch background. -->
+    <style name="Theme.TinaAI" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+</resources>
